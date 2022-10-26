@@ -1,7 +1,6 @@
 export default {
     requestScreen,
     requestWebcam,
-    createVideo,
 }
 
 async function requestScreen() {
@@ -20,14 +19,4 @@ async function requestWebcam() {
     const opt = { audio: true, video: true }
     const stream = await navigator.mediaDevices.getUserMedia(opt)
     return stream
-}
-
-function createVideo(stream) {
-    const video = document.createElement('video')
-    video.srcObject = stream
-    video.onloadedmetadata = () => {
-        video.play()
-    }
-
-    return video
 }
