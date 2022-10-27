@@ -16,7 +16,10 @@ async function requestScreen() {
 }
 
 async function requestWebcam() {
-    const opt = { audio: true, video: true }
+    const opt = {
+        video: true,
+        audio: false, // disable for demo
+    }
     const stream = await navigator.mediaDevices.getUserMedia(opt)
     return stream
 }
